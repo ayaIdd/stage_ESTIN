@@ -1,0 +1,40 @@
+{
+  "clubs": [
+    {
+      "id": 1,
+      "name": "ByteCraft",
+      "logo": "/assets/logos/bytecraft.png",
+      "description": "ByteCraft is the largest scientific club at ESTIN, focused on computer science. It provides a supportive environment for students to learn and innovate in various computer science fields, including hackathons, idea marathons, and workshops."
+    },
+    {
+      "id": 2,
+      "name": "GDSC ESTIN",
+      "logo": "/assets/logos/gdsc_estin.png",
+      "description": "GDSC ESTIN, affiliated with Google, aims to build a strong developer community at ESTIN. It offers workshops, hackathons, and speaker sessions focused on Google technologies, fostering technical skills and innovation among students."
+    },
+    {
+      "id": 3,
+      "name": "LDC",
+      "logo": "/assets/logos/ldc.png",
+      "description": "Leisure & Discovery Club (LDC) enriches student life with cultural events, sports activities, and community outings. It promotes a balanced lifestyle and fosters unity among ESTIN students through various recreational programs."
+    },
+    {
+      "id": 4,
+      "name": "School of AI",
+      "logo": "/assets/logos/school_of_ai.png",
+      "description": "The School of AI at ESTIN focuses on artificial intelligence and data science education. It hosts conferences, workshops, and datathons to explore AI concepts, advance technical skills, and prepare students for AI-driven careers."
+    },
+    {
+      "id": 5,
+      "name": "Nexus Security Club",
+      "logo": "/assets/logos/nexus_security.png",
+      "description": "Nexus Security Club specializes in cybersecurity education and practical skills development. It conducts workshops, seminars, and Capture the Flag (CTF) competitions to prepare members for challenges in digital security."
+    },
+    {
+      "id": 6,
+      "name": "Sirius Hardware Engineering Club",
+      "logo": "/assets/logos/sirius_hardware.png",
+      "description": "Sirius Hardware Engineering Club focuses on hardware technology. It offers workshops, projects, and hackathons to explore IoT, electronics, and hardware design, fostering innovation and technical expertise among students."
+    }
+  ]
+}

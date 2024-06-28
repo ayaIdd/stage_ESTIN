@@ -1,3 +1,5 @@
+
+
 import React from "react";
 
 const Home = () => {
@@ -7,17 +9,17 @@ const Home = () => {
         <div className="card bg-dark text-white border-0 mx-3">
           <img
             className="card-img img-fluid"
-            src="./assets/main.png.jpg"
+            src="./assets/etudiants-promo-estin-bejaia-juin-2022-1-scaled.jpg"
             alt="Card"
-            height={500}
+            style={{ height: "745px", width: "auto" }} // Adjust the height as needed
           />
-          <div className="card-img-overlay d-flex align-items-center">
+          <div className="card-img-overlay d-flex align-items-start" style={{ paddingTop: "85px" }}>
             <div className="container">
-              <h5 className="card-title fs-1 text fw-lighter">New Season Arrivals</h5>
-              <p className="card-text fs-5 d-none d-sm-block ">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+              <h5 className="card-title fs-1 fw-bold">
+                Estin virtual visit
+              </h5>
+              <p className="card-text fs-3 fw-bold d-none d-sm-block">
+                This is What Estin has to offer you
               </p>
             </div>
           </div>
