@@ -5,9 +5,12 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import { Bytecraft, Gdsc, Nexus, Sirius , Soai , Ldc} from './components';
+import './App.css'
 
 
-import { Home, Product, Products, AboutPage, ContactPage, Cart, Login, Register, Checkout, PageNotFound } from "./pages"
+import { Home,  AboutPage, ContactPage, Cart, Login, Register, Checkout, PageNotFound } from "./pages"
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,11 +18,14 @@ root.render(
     <Provider store={store}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Products />} />
-        <Route path="/product/:id" element={<Product />} />
+        <Route path="/club/1" component={Bytecraft} />
+        <Route path="/club/2" component={Gdsc} />
+        <Route path="/club/3" component={Ldc} />
+        <Route path="/club/4" component={Soai} />
+        <Route path="/club/5" component={Nexus} />
+        <Route path="/club/6" component={Sirius} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/checkout" element={<Checkout />} />
@@ -29,3 +35,4 @@ root.render(
     </Provider>
   </BrowserRouter>
 );
+

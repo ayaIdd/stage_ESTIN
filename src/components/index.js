@@ -1,4 +1,10 @@
 export { default as Navbar } from './Navbar';
 export { default as Main } from './main';
-export { default as Product } from './Products';
+export { default as Clubs } from './Clubs';
 export { default as Footer } from './Footer';
+export { default as Bytecraft } from './Bytecraft';
+export { default as Sirius } from './Sirius';
+export { default as Gdsc } from './Gdsc'; 
+export { default as Soai } from './Soai';
+export { default as Nexus } from './Nexus';
+export { default as Ldc } from './Ldc';
