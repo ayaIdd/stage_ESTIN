@@ -3,10 +3,10 @@ import SliderItem from './SliderItem';
 import ThumbnailItem from './Thumbnail';
 
 const images = [
-  { src: './image/nexus.jpg', title: 'Nexus', description: "The Nexus Security Club fosters cybersecurity interest at the Higher School of Computer Science in Amizour through workshops, seminars, and CTF events, preparing students for careers in digital security." },
-  { src: './image/img12.jpg', title: 'NexZero', description: "CTF (Capture The Flag)." },
-  { src: './image/img13.jpg', title: 'NexTrace', description: "Mini CTF" },
-  { src: './image/img11.jpg', title: 'NEXLABS', description: "A collection of labs and conferences guided by seasoned mentors and industry experts in cybersecurity." },
+  { src: './assets/nexus.jpg', title: 'Nexus', description: "The Nexus Security Club fosters cybersecurity interest at the Higher School of Computer Science in Amizour through workshops, seminars, and CTF events, preparing students for careers in digital security." },
+  { src: './assets/img12.jpg', title: 'NexZero', description: "CTF (Capture The Flag)." },
+  { src: './assets/img13.jpg', title: 'NexTrace', description: "Mini CTF" },
+  { src: './assets/img11.jpg', title: 'NEXLABS', description: "A collection of labs and conferences guided by seasoned mentors and industry experts in cybersecurity." },
 ];
 
 function Nexus() {

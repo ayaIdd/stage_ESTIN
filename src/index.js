@@ -9,7 +9,7 @@ import { Bytecraft, Gdsc, Nexus, Sirius , Soai , Ldc} from './components';
 import './App.css'
 
 
-import { Home,  AboutPage, ContactPage, Cart, Login, Register, Checkout, PageNotFound } from "./pages"
+import { Home,  AboutPage, ContactPage,  PageNotFound } from "./pages"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -26,9 +26,6 @@ root.render(
         <Route path="/club/6" component={Sirius} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<PageNotFound />} />
         <Route path="/product/*" element={<PageNotFound />} />
       </Routes>

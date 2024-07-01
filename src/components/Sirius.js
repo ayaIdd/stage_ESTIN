@@ -3,11 +3,11 @@ import SliderItem from './SliderItem';
 import ThumbnailItem from './Thumbnail';
 
 const images = [
-  { src: './image/l.png', title: 'Sirius',  description:"Sirius is a vibrant and dynamic group of students who share a deep passion for hardware engineering. Our club is dedicated to fostering a community where members can explore, learn, and innovate together in the field of hardware technology." },
-  { src: './image/img24.jpg', title: 'Welcome Day', description:""},
-  { src: './image/img22.jpg', title: 'Sirius 101', description:"A series of workshops designed to give students a comprehensive understanding of the Internet of Things (IoT)." },
-  { src: './image/img23.jpg', title: 'NASA Space Apps Challenge',  description :""},
-  { src: './image/img21.jpg', title: 'Bejaia Hackathon ',  description :"An electrifying collaborative coding event."},
+  { src: './assets/l.png', title: 'Sirius',  description:"Sirius is a vibrant and dynamic group of students who share a deep passion for hardware engineering. Our club is dedicated to fostering a community where members can explore, learn, and innovate together in the field of hardware technology." },
+  { src: './assets/img24.jpg', title: 'Welcome Day', description:""},
+  { src: './assets/img22.jpg', title: 'Sirius 101', description:"A series of workshops designed to give students a comprehensive understanding of the Internet of Things (IoT)." },
+  { src: './assets/img23.jpg', title: 'NASA Space Apps Challenge',  description :""},
+  { src: './assets/img21.jpg', title: 'Bejaia Hackathon ',  description :"An electrifying collaborative coding event."},
 ];
 
 function Sirius() {

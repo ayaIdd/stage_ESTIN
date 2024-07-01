@@ -3,11 +3,11 @@ import SliderItem from './SliderItem';
 import ThumbnailItem from './Thumbnail';
 
 const images = [
-  { src: './image/soai.png', title: 'School of AI', description:"The School of AI is a vibrant club based at ESTIN, founded by enthusiastic students passionate about AI and data science. Our mission is to create a community where members can share knowledge, learn together, and explore new concepts and technologies in the field of artificial intelligence." },
-  { src: './image/img14.jpg', title: 'LearnIt ',  description:"- A series of accelerated workshops covering various fields." },
-  { src: './image/img15.jpg', title: 'Conference', description:"Conference on 'HOW TO MAKE AN INTELLIGENT MOBILE APP' by Meziane Dahou."},
-  { src: './image/img16.jpg', title: 'BrAinON', description:"Ideathon is an event to solve real-world problems." },
-  { src: './image/img17.jpg', title: 'DATABLITZ',  description :" An AI and Data Science Bootcamp."},
+  { src: './assets/soai.png', title: 'School of AI', description:"The School of AI is a vibrant club based at ESTIN, founded by enthusiastic students passionate about AI and data science. Our mission is to create a community where members can share knowledge, learn together, and explore new concepts and technologies in the field of artificial intelligence." },
+  { src: './assets/img14.jpg', title: 'LearnIt ',  description:"- A series of accelerated workshops covering various fields." },
+  { src: './assets/img15.jpg', title: 'Conference', description:"Conference on 'HOW TO MAKE AN INTELLIGENT MOBILE APP' by Meziane Dahou."},
+  { src: './assets/img16.jpg', title: 'BrAinON', description:"Ideathon is an event to solve real-world problems." },
+  { src: './assets/img17.jpg', title: 'DATABLITZ',  description :" An AI and Data Science Bootcamp."},
 ];
 
 function Soai() {
