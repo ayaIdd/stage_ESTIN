@@ -386,3 +386,91 @@ header a:hover{
         font-size: 50px;
     }
 }
+
+/* CSS for the Navbar */
+/* Navbar CSS */
+.estin-navbar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f8f9fa;
+    padding-top: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.navbar-logo {
+    height: 60px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.navbar-slogan {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+    color: #000;
+}
+
+.navbar-links {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+}
+
+.navbar-links li {
+    margin: 10px 0;
+}
+
+.navbar-links a {
+    display: block;
+    color: #333;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.navbar-links a:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+.navbar-button {
+    margin-top: auto;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #2C3484;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.navbar-button:hover {
+    background-color: #1A237E;
+}
+    .content {
+    margin-left: 250px; /* Same as the width of the navbar */
+    padding: 10px; /* Optional padding */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+}
