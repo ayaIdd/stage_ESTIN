@@ -48,22 +48,22 @@ function Home() {
         <Main />
         <Clubs />
         <main>
-          <section id="bytecraft" className="px-4 py-4 border">
+          <section id="bytecraft" className="px-4 py-4 ">
             <Bytecraft />
           </section>
-          <section id="gdsc" className="px-4 py-4 border">
+          <section id="gdsc" className="px-4 py-4 ">
             <Gdsc />
           </section>
-          <section id="ldc" className="px-4 py-4 border">
+          <section id="ldc" className="px-4 py-4 ">
             <Ldc />
           </section>
-          <section id="soai" className="px-4 py-4 border">
+          <section id="soai" className="px-4 py-4 ">
             <Soai />
           </section>
-          <section id="sirius" className="px-4 py-4 border">
+          <section id="sirius" className="px-4 py-4 ">
             <Sirius />
           </section>
-          <section id="nexus" className="px-4 py-4 border">
+          <section id="nexus" className="px-4 py-4 ">
             <Nexus />
           </section>
         </main>
