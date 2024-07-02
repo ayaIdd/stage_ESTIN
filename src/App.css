@@ -31,7 +31,7 @@ header a{
 }
 
 a.active{
-    background: #2C3484;
+    background: #3c53c9;
     border-radius: 2px;
     margin-left: 15px;
 }
@@ -477,7 +477,7 @@ main {
 }
 
 .navbar-links li {
-    margin: 10px 0px ;
+    margin: 13px 0px ;
   
 }
 
@@ -496,16 +496,18 @@ main {
 
 .navbar-button {
     margin-top: auto;
-    margin-bottom: 20px;
     padding: 10px 20px;
     font-size: 14px;
     font-weight: 600;
     color: #fff;
-    background-color: #2C3484;
+    background-color: #3f51b5;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    position: absolute;
+    bottom: 70px; /* Adjust to control the vertical distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .navbar-button:hover {
@@ -531,3 +533,5 @@ main {
         padding: 10px;
     }
 }
+
+

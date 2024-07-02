@@ -12,9 +12,11 @@ const Navbar = () => {
             <ul className="navbar-links">
                 <li><NavLink to="/" exact>Home</NavLink></li>
                 <li><NavLink to="/visits">Featured Visits</NavLink></li>
-                <li><NavLink to="/customize">Customize Your Visit</NavLink></li>
+                <li><NavLink to="/Customize">Customize Your Visit</NavLink></li>
             </ul>
-            <button className="navbar-button">Get Informed</button>
+            <NavLink to="/Contact">
+          <button className="btn btn-primary navbar-button">Get Informed</button>
+           </NavLink>
         </nav>
     );
 }
