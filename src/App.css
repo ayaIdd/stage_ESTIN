@@ -31,13 +31,13 @@ header a{
 }
 
 a.active{
-    background: #2C3484;
+    background: #434fd0;
     border-radius: 2px;
     margin-left: 15px;
 }
 
 header a:hover{
-    background: #2C3484;
+    background: #2b34b2;
     border-radius: 2px;
     margin-left: 15px;
 }
@@ -496,16 +496,18 @@ main {
 
 .navbar-button {
     margin-top: auto;
-    margin-bottom: 20px;
     padding: 10px 20px;
     font-size: 14px;
     font-weight: 600;
     color: #fff;
-    background-color: #2C3484;
+    background-color: #434fd0;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    position: absolute;
+    bottom: 50px; /* Adjust to control the vertical distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .navbar-button:hover {

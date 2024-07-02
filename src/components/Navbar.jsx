@@ -14,7 +14,9 @@ const Navbar = () => {
                 <li><NavLink to="/visits">Featured Visits</NavLink></li>
                 <li><NavLink to="/customize">Customize Your Visit</NavLink></li>
             </ul>
-            <button className="navbar-button">Get Informed</button>
+            <NavLink to="/contact">
+        <button className="btn btn-primary navbar-button">Get Informed</button>
+            </NavLink>      
         </nav>
     );
 }
