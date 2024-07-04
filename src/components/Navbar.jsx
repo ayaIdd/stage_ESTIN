@@ -14,9 +14,15 @@ const Navbar = () => {
                 <li><NavLink to="/visits">Featured Visits</NavLink></li>
                 <li><NavLink to="/Customize">Customize Your Visit</NavLink></li>
             </ul>
+<<<<<<< HEAD
             <NavLink to="/Contact">
           <button className="btn btn-primary navbar-button">Get Informed</button>
            </NavLink>
+=======
+            <NavLink to="/contact">
+        <button className="btn btn-primary navbar-button">Get Informed</button>
+            </NavLink>      
+>>>>>>> dfe86991f265059b798bdb55e9b53c29085870f7
         </nav>
     );
 }

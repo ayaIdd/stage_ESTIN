@@ -31,13 +31,17 @@ header a{
 }
 
 a.active{
+<<<<<<< HEAD
     background: #3c53c9;
+=======
+    background: #434fd0;
+>>>>>>> dfe86991f265059b798bdb55e9b53c29085870f7
     border-radius: 2px;
     margin-left: 15px;
 }
 
 header a:hover{
-    background: #2C3484;
+    background: #2b34b2;
     border-radius: 2px;
     margin-left: 15px;
 }
@@ -500,12 +504,20 @@ main {
     font-size: 14px;
     font-weight: 600;
     color: #fff;
+<<<<<<< HEAD
     background-color: #3f51b5;
+=======
+    background-color: #434fd0;
+>>>>>>> dfe86991f265059b798bdb55e9b53c29085870f7
     border: none;
     border-radius: 5px;
     cursor: pointer;
     position: absolute;
+<<<<<<< HEAD
     bottom: 70px; /* Adjust to control the vertical distance from the bottom */
+=======
+    bottom: 50px; /* Adjust to control the vertical distance from the bottom */
+>>>>>>> dfe86991f265059b798bdb55e9b53c29085870f7
     left: 50%;
     transform: translateX(-50%);
 }
