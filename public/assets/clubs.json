@@ -5,42 +5,40 @@
       "path": "bytecraft",
       "name": "ByteCraft",
       "logo": "/assets/logos/bytecraft.png",
-      "description": "ByteCraft is the largest scientific club at ESTIN, focused on computer science. It provides a supportive environment for students to learn and innovate in various computer science fields, including hackathons, idea marathons, and workshops."
-    },
+      "description": "ByteCraft est le plus grand club scientifique de l'École Supérieure en Sciences et Technologies de l'Informatique et du Numérique (ESTIN). Focalisé principalement sur l'informatique, ByteCraft vise à fournir un environnement social dynamique et solidaire où les étudiants peuvent apprendre, s'amuser et améliorer leurs compétence"},
     {
       "id": 2,
       "path": "gdsc",
       "name": "GDSC ESTIN",
-      "logo": "/assets/logos/gdsc_estin.png",
-      "description": "GDSC ESTIN, affiliated with Google, aims to build a strong developer community at ESTIN. It offers workshops, hackathons, and speaker sessions focused on Google technologies, fostering technical skills and innovation among students."
+      "logo": "/assets/logos/gdsc_logo(1).png",
+      "description": "GDSC ESTIN de l'École Supérieure en Sciences et Technologies de l'Informatique et du Numérique (ESTIN) de Béjaïa est une communauté dynamique de développeurs et d'étudiants. Axé sur les technologies Google, il organise des ateliers, des hackathons et des sessions de conférenciers pour favoriser la collaboration, améliorer les compétences techniques et promouvoir l'innovation. GDSC ESTIN offre des opportunités d'apprentissage, de réseautage et de préparation à des carrières technologiques réussies."
     },
     {
       "id": 3,
       "path": "ldc",
       "name": "LDC",
-      "logo": "/assets/logos/ldc.png",
-      "description": "Leisure & Discovery Club (LDC) enriches student life with cultural events, sports activities, and community outings. It promotes a balanced lifestyle and fosters unity among ESTIN students through various recreational programs."
-    },
+      "logo": "/assets/logos/ldc_logo.png",
+      "description": "Le Club Loisirs & Découverte (LDC) de l'École Supérieure en Sciences et Technologies de l'Informatique et du Numérique (ESTIN) se consacre à enrichir la vie étudiante en équilibrant les activités académiques avec des activités engageantes et agréables. Avec une philosophie « L'humain d'abord, l'étudiant ensuite », LDC donne la priorité au bien-être et au développement holistique de ses membres."},
     {
       "id": 4,
       "path": "soai",
       "name": "School of AI",
-      "logo": "/assets/logos/school_of_ai.png",
-      "description": "The School of AI at ESTIN focuses on artificial intelligence and data science education. It hosts conferences, workshops, and datathons to explore AI concepts, advance technical skills, and prepare students for AI-driven careers."
+      "logo": "/assets/logos/soai_logo.png",
+      "description": "L'École d'IA est un club dynamique basé à ESTIN, fondé par des étudiants enthousiastes et passionnés par l'IA et la science des données. Notre mission est de créer une communauté où les membres peuvent partager leurs connaissances, apprendre ensemble et explorer de nouveaux concepts et technologies dans le domaine de l'intelligence artificielle."
     },
     {
       "id": 5,
       "path": "nexus",
       "name": "Nexus Security Club",
-      "logo": "/assets/logos/nexus_security.png",
-      "description": "Nexus Security Club specializes in cybersecurity education and practical skills development. It conducts workshops, seminars, and Capture the Flag (CTF) competitions to prepare members for challenges in digital security."
+      "logo": "/assets/logos/nexus.png",
+      "description": "Le Nexus Security Club favorise l'intérêt pour la cybersécurité à l'École supérieure d'informatique d'Amizour à travers des ateliers, des séminaires et des événements CTF, préparant les étudiants aux métiers de la sécurité numérique."
     },
     {
       "id": 6,
       "path": "sirius",
-      "name": "Sirius Hardware Engineering Club",
-      "logo": "/assets/logos/sirius_hardware.png",
-      "description": "Sirius Hardware Engineering Club focuses on hardware technology. It offers workshops, projects, and hackathons to explore IoT, electronics, and hardware design, fostering innovation and technical expertise among students."
+      "name": " Hardware Engineering Club",
+      "logo": "/assets/logos/sirius_logo.png",
+      "description": "Sirius est un groupe d'étudiants dynamiques qui partagent une profonde passion pour l'ingénierie matérielle. Notre club se consacre à favoriser une communauté où les membres peuvent explorer, apprendre et innover ensemble dans le domaine de la technologie matérielle."
     }
   ]
 }

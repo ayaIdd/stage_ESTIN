@@ -1,85 +1,53 @@
-import React, { useState, useEffect, useRef, useCallback, useMemo, useLayoutEffect } from 'react';
-import SliderItem from './SliderItem';
-import ThumbnailItem from './Thumbnail';
+import React from "react";
+import { Carousel } from 'react-bootstrap';
 
 const images = [
-  { src: './assets/soai.png', title: 'School of AI', description:"The School of AI is a vibrant club based at ESTIN, founded by enthusiastic students passionate about AI and data science. Our mission is to create a community where members can share knowledge, learn together, and explore new concepts and technologies in the field of artificial intelligence." },
-  { src: './assets/img14.jpg', title: 'LearnIt ',  description:"- A series of accelerated workshops covering various fields." },
-  { src: './assets/img15.jpg', title: 'Conference', description:"Conference on 'HOW TO MAKE AN INTELLIGENT MOBILE APP' by Meziane Dahou."},
-  { src: './assets/img16.jpg', title: 'BrAinON', description:"Ideathon is an event to solve real-world problems." },
-  { src: './assets/img17.jpg', title: 'DATABLITZ',  description :" An AI and Data Science Bootcamp."},
+  {
+    src: './assets/soai.jpg',
+    title: 'School of AI',
+    description: "School of ai  est un club dynamique basé à ESTIN, fondé par des étudiants enthousiastes et passionnés par l'IA et la science des données. Notre mission est de créer une communauté où les membres peuvent partager leurs connaissances, apprendre ensemble et explorer de nouveaux concepts et technologies dans le domaine de l'intelligence artificielle."
+  },
+  {
+    src: './assets/img14.jpg',
+    title: 'LearnIt',
+    description: "Une série d'ateliers accélérés couvrant divers domaines."
+  },
+  {
+    src: './assets/img15.jpg',
+    title: 'Conférence',
+    description: "Conférence sur 'COMMENT CRÉER UNE APPLICATION MOBILE INTELLIGENTE' par Meziane Dahou."
+  },
+  {
+    src: './assets/img16.jpg',
+    title: 'BrAinON',
+    description: "Ideathon est un événement pour résoudre des problèmes du monde réel."
+  },
+  {
+    src: './assets/img17.jpg',
+    title: 'DATABLITZ',
+    description: "Un Bootcamp en IA et science des données."
+  }
 ];
 
-function Soai() {
-  const [items, setItems] = useState(images);
-  const [direction, setDirection] = useState(null);
-  const sliderRef = useRef(null);
 
-  const moveSlider = useCallback((newDirection) => {
-    setDirection(newDirection);
-    
-    setItems(prevItems => {
-      const newItems = [...prevItems];
-      if (newDirection === 'next') {
-        const firstItem = newItems.shift();
-        newItems.push(firstItem);
-      } else {
-        const lastItem = newItems.pop();
-        newItems.unshift(lastItem);
-      }
-      return newItems;
-    });
-  }, []);
-
-  useEffect(() => {
-    if (direction) {
-      const timer = setTimeout(() => {
-        setDirection(null);
-        if (sliderRef.current) {
-          sliderRef.current.classList.remove(direction);
-        }
-      }, 500);
-      return () => clearTimeout(timer);
-    }
-  }, [direction]);
-
-  useLayoutEffect(() => {
-    if (direction && sliderRef.current) {
-      sliderRef.current.classList.add(direction);
-    }
-  }, [direction, items]);
-
-  const sliderItems = useMemo(() => (
-    items.map((image, index) => (
-      <SliderItem
-        key={image.src}
-        image={image}
-        isActive={index === 0}
-      />
-    ))
-  ), [items]);
-
-  const thumbnailItems = useMemo(() => (
-    items.map((image) => (
-      <ThumbnailItem
-        key={image.src}
-        image={image}
-      />
-    ))
-  ), [items]);
-
+const Soai = () => {
   return (
-    <div ref={sliderRef} className="slider">
-      <div className="list">
-        {sliderItems}
-      </div>
-      <div className="thumbnail">
-        {thumbnailItems}
-      </div>
-      <div className="nextPrevArrows">
-        <button className="prev" onClick={() => moveSlider('prev')}> &lt; </button>
-        <button className="next" onClick={() => moveSlider('next')}> &gt; </button>
-      </div>
+    <div className="carousel-wrapper">
+      <Carousel className="centered-carousel">
+        {images.map((image, index) => (
+          <Carousel.Item key={index}>
+            <img
+              className="d-block w-100"
+              src={process.env.PUBLIC_URL + image.src} // Utilisation de process.env.PUBLIC_URL pour le chemin correct
+              alt={image.title}
+            />
+            <Carousel.Caption>
+              <h3>{image.title}</h3>
+              <p>{image.description}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
     </div>
   );
 }

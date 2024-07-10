@@ -1,89 +1,64 @@
-import React, { useState, useEffect, useRef, useCallback, useMemo, useLayoutEffect } from 'react';
-import SliderItem from './SliderItem';
-import ThumbnailItem from './Thumbnail';
+import React from 'react';
+import { Carousel } from 'react-bootstrap';
+
 
 const images = [
-  { src: './assets/img7.png', title: 'ByteCraft',  description:"ByteCraft is the largest scientific club at the École Supérieure en Sciences et Technologies de l'Informatique et du Numérique (ESTIN). Focused primarily on computer science, ByteCraft aims to provide a supportive and dynamic social environment where students can learn, enjoy, and enhance their skills." },
-  { src: './assets/img5.jpg', title: 'CHESSTIN', description:"A Chess game competition between students , ti's a game that develops : reasoning , problem analysis and problem solving "},
-  { src: './assets/img3.jpg', title: 'IDEATECH', description:"Idea-generation marathons that encourage creative thinking and collaborative problem-solving, often leading to the development of innovative projects." },
-  { src: './assets/img4.jpg', title: 'CYBER SESSION',  description :"A program of workshops that offers hands-on training in cybersecurity, where participants grasp the basics and learn to protect against digital threats."},
-  { src: './assets/img6.jpg', title: 'IDEATECH2',  description:"Competitive designing events where students tackle challenging problems, innovate solutions, and showcase their design skills."},
-  { src: './assets/img1.jpg', title: 'DESIGN CAMP',  description:"it's a Bootcamp / workshops style event where experienced designers will help participants learn design from scratch " },
-  { src: './assets/img2.jpg', title: 'INNOBYTE',  description:"A hackathon where participants collaboratively solve problems "},
+  {
+    src: './assets/img7.png',
+    title: 'ByteCraft',
+    description: "ByteCraft est le plus grand club scientifique de l'École Supérieure en Sciences et Technologies de l'Informatique et du Numérique (ESTIN). Focalisé principalement sur l'informatique, ByteCraft vise à fournir un environnement social dynamique et solidaire où les étudiants peuvent apprendre, s'amuser et améliorer leurs compétences."
+  },
+  {
+    src: './assets/img5.jpg',
+    title: 'CHESSTIN',
+    description: "Une compétition d'échecs entre étudiants, c'est un jeu qui développe : le raisonnement, l'analyse et la résolution de problèmes."
+  },
+  {
+    src: './assets/img3.jpg',
+    title: 'IDEATECH',
+    description: "Hakathons de génération d'idées qui encouragent la pensée créative et la résolution collaborative de problèmes, conduisant souvent au développement de projets innovants."
+  },
+  {
+    src: './assets/img4.jpg',
+    title: 'CYBER SESSION',
+    description: "Un programme d'ateliers offrant une formation pratique en cybersécurité, où les participants apprennent les bases et comment se protéger contre les menaces numériques."
+  },
+  {
+    src: './assets/img6.jpg',
+    title: 'IDEATECH2',
+    description: "Événements de conception compétitifs où les étudiants s'attaquent à des problèmes complexes, innovent des solutions et montrent leurs compétences en conception."
+  },
+  {
+    src: './assets/img1.jpg',
+    title: 'DESIGN CAMP',
+    description: "C'est un Bootcamp où des designers expérimentés aident les participants à apprendre la conception depuis le début."
+  },
+  {
+    src: './assets/img2.jpg',
+    title: 'INNOBYTE',
+    description: "Un hackathon où les participants résolvent des problèmes de manière collaborative."
+  }
 ];
-
-function Bytecraft() {
-  const [items, setItems] = useState(images);
-  const [direction, setDirection] = useState(null);
-  const sliderRef = useRef(null);
-
-  const moveSlider = useCallback((newDirection) => {
-    setDirection(newDirection);
-    
-    setItems(prevItems => {
-      const newItems = [...prevItems];
-      if (newDirection === 'next') {
-        const firstItem = newItems.shift();
-        newItems.push(firstItem);
-      } else {
-        const lastItem = newItems.pop();
-        newItems.unshift(lastItem);
-      }
-      return newItems;
-    });
-  }, []);
-
-  useEffect(() => {
-    if (direction) {
-      const timer = setTimeout(() => {
-        setDirection(null);
-        if (sliderRef.current) {
-          sliderRef.current.classList.remove(direction);
-        }
-      }, 500);
-      return () => clearTimeout(timer);
-    }
-  }, [direction]);
-
-  useLayoutEffect(() => {
-    if (direction && sliderRef.current) {
-      sliderRef.current.classList.add(direction);
-    }
-  }, [direction, items]);
-
-  const sliderItems = useMemo(() => (
-    items.map((image, index) => (
-      <SliderItem
-        key={image.src}
-        image={image}
-        isActive={index === 0}
-      />
-    ))
-  ), [items]);
-
-  const thumbnailItems = useMemo(() => (
-    items.map((image) => (
-      <ThumbnailItem
-        key={image.src}
-        image={image}
-      />
-    ))
-  ), [items]);
-
+const BytecraftCarousel = () => {
   return (
-    <div ref={sliderRef} className="slider">
-      <div className="list">
-        {sliderItems}
-      </div>
-      <div className="thumbnail">
-        {thumbnailItems}
-      </div>
-      <div className="nextPrevArrows">
-        <button className="prev" onClick={() => moveSlider('prev')}> &lt; </button>
-        <button className="next" onClick={() => moveSlider('next')}> &gt; </button>
-      </div>
+    <div className="carousel-wrapper">
+      <Carousel className="centered-carousel">
+        {images.map((image, index) => (
+          <Carousel.Item key={index}>
+            <img
+              className="d-block w-100"
+              src={image.src}
+              alt={image.title}
+            />
+            <Carousel.Caption>
+              <h3>{image.title}</h3>
+              <p>{image.description}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
     </div>
   );
 }
 
-export default Bytecraft;
+export default BytecraftCarousel;

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-
-const Clubs = () => {
+const ClubCards = () => {
   const [clubs, setClubs] = useState([]);
 
   useEffect(() => {
@@ -17,24 +16,26 @@ const Clubs = () => {
   };
 
   const ClubCard = ({ club }) => (
-    <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4" id={`club-${club.id}`}>
+    <div className="col-lg-4 col-md-6 col-sm-12 mb-3" id={`club-${club.id}`}>
       <div className="card text-center h-100">
         <img
-          className="card-img-top p-3"
+          className="card-img-top p-1 img-fluid"
           src={club.logo}
           alt={`${club.name} Logo`}
-          height={200}
         />
-        <div className="card-body">
-          <h5 className="card-title">{club.name}</h5>
-          <p className="card-text">{club.description.substring(0, 120)}...</p>
-          <a
-            href={`#${club.path}`} // Lien vers la section de détail du club
-            className="btn btn-dark"
-            onClick={(e) => handleReadMoreClick(e, club.path)}
-          >
-            Read More
-          </a>
+        <div className="card-body d-flex flex-column">
+          <h5 className="card-title fs-3">{club.name}</h5>
+          <p className="card-text text-muted fs-5">{club.description.substring(0, 120)}...</p>
+          <div className="mt-auto">
+            <a
+              href={`#${club.path}`}
+              className="btn btn-dark"
+              style={{ background: "#34495e" }}
+              onClick={(e) => handleReadMoreClick(e, club.path)}
+            >
+              En savoir plus
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -44,7 +45,7 @@ const Clubs = () => {
     <div className="container my-3 py-3">
       <div className="row">
         <div className="col-12">
-          <h2 className="display-5 text-center text-black">Clubs</h2>
+          <h2 className="display-5 fw-bold text-center" style={{ color: "#34495e" }}>Nos Clubs</h2>
           <hr />
         </div>
       </div>
@@ -57,4 +58,4 @@ const Clubs = () => {
   );
 };
 
-export default Clubs;
+export default ClubCards;

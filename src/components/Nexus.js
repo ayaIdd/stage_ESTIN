@@ -1,83 +1,49 @@
-import React, { useState, useEffect, useRef, useCallback, useMemo, useLayoutEffect } from 'react';
-import SliderItem from './SliderItem';
-import ThumbnailItem from './Thumbnail';
+import React from "react";
+import { Carousel } from 'react-bootstrap';
+
 
 const images = [
-  { src: './assets/nexus.jpg', title: 'Nexus', description: "The Nexus Security Club fosters cybersecurity interest at the Higher School of Computer Science in Amizour through workshops, seminars, and CTF events, preparing students for careers in digital security." },
-  { src: './assets/img12.jpg', title: 'NexZero', description: "CTF (Capture The Flag)." },
-  { src: './assets/img13.jpg', title: 'NexTrace', description: "Mini CTF" },
-  { src: './assets/img11.jpg', title: 'NEXLABS', description: "A collection of labs and conferences guided by seasoned mentors and industry experts in cybersecurity." },
+  {
+    src: './assets/nexus.jpg',
+    title: 'Nexus',
+    description: "Le Nexus Security Club favorise l'intérêt pour la cybersécurité à l'École supérieure d'informatique d'Amizour à travers des ateliers, des séminaires et des événements CTF, préparant les étudiants aux métiers de la sécurité numérique."
+  },
+  {
+    src: './assets/img12.jpg',
+    title: 'NexZero',
+    description: "CTF (Capture The Flag)."
+  },
+  {
+    src: './assets/img13.jpg',
+    title: 'NexTrace',
+    description: "Mini CTF"
+  },
+  {
+    src: './assets/img11.jpg',
+    title: 'NEXLABS',
+    description: "Une série de laboratoires et de conférences guidés par des mentors expérimentés et des experts de l'industrie en cybersécurité."
+  }
 ];
 
-function Nexus() {
-  const [items, setItems] = useState(images);
-  const [direction, setDirection] = useState(null);
-  const sliderRef = useRef(null);
 
-  const moveSlider = useCallback((newDirection) => {
-    setDirection(newDirection);
-    setItems(prevItems => {
-      const newItems = [...prevItems];
-      if (newDirection === 'next') {
-        const firstItem = newItems.shift();
-        newItems.push(firstItem);
-      } else {
-        const lastItem = newItems.pop();
-        newItems.unshift(lastItem);
-      }
-      return newItems;
-    });
-  }, []);
-
-  useEffect(() => {
-    if (direction) {
-      const timer = setTimeout(() => {
-        setDirection(null);
-        if (sliderRef.current) {
-          sliderRef.current.classList.remove(direction);
-        }
-      }, 500);
-      return () => clearTimeout(timer);
-    }
-  }, [direction]);
-
-  useLayoutEffect(() => {
-    if (direction && sliderRef.current) {
-      sliderRef.current.classList.add(direction);
-    }
-  }, [direction, items]);
-
-  const sliderItems = useMemo(() => (
-    items.map((image, index) => (
-      <SliderItem
-        key={image.src}
-        image={image}
-        isActive={index === 0}
-      />
-    ))
-  ), [items]);
-
-  const thumbnailItems = useMemo(() => (
-    items.map((image) => (
-      <ThumbnailItem
-        key={image.src}
-        image={image}
-      />
-    ))
-  ), [items]);
-
+const Nexus = () => {
   return (
-    <div ref={sliderRef} className="slider">
-      <div className="list">
-        {sliderItems}
-      </div>
-      <div className="thumbnail">
-        {thumbnailItems}
-      </div>
-      <div className="nextPrevArrows">
-        <button className="prev" onClick={() => moveSlider('prev')}> &lt; </button>
-        <button className="next" onClick={() => moveSlider('next')}> &gt; </button>
-      </div>
+    <div className="carousel-wrapper">
+      <Carousel className="centered-carousel">
+        {images.map((image, index) => (
+          <Carousel.Item key={index}>
+            <img
+              className="d-block w-100"
+              src={process.env.PUBLIC_URL + image.src} // Utilisation de process.env.PUBLIC_URL pour le chemin correct
+              alt={image.title}
+            />
+            <Carousel.Caption>
+              <h3>{image.title}</h3>
+              <p>{image.description}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
     </div>
   );
 }

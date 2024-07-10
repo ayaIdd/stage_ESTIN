@@ -1,85 +1,54 @@
-import React, { useState, useEffect, useRef, useCallback, useMemo, useLayoutEffect } from 'react';
-import SliderItem from './SliderItem';
-import ThumbnailItem from './Thumbnail';
+import React from "react";
+import { Carousel } from 'react-bootstrap';
+
 
 const images = [
-  { src: './assets/l.png', title: 'Sirius',  description:"Sirius is a vibrant and dynamic group of students who share a deep passion for hardware engineering. Our club is dedicated to fostering a community where members can explore, learn, and innovate together in the field of hardware technology." },
-  { src: './assets/img24.jpg', title: 'Welcome Day', description:""},
-  { src: './assets/img22.jpg', title: 'Sirius 101', description:"A series of workshops designed to give students a comprehensive understanding of the Internet of Things (IoT)." },
-  { src: './assets/img23.jpg', title: 'NASA Space Apps Challenge',  description :""},
-  { src: './assets/img21.jpg', title: 'Bejaia Hackathon ',  description :"An electrifying collaborative coding event."},
+  {
+    src: './assets/l.png',
+    title: 'Sirius',
+    description: "Sirius est un groupe d'étudiants dynamiques qui partagent une profonde passion pour l'ingénierie matérielle. Notre club se consacre à favoriser une communauté où les membres peuvent explorer, apprendre et innover ensemble dans le domaine de la technologie matérielle."
+  },
+  {
+    src: './assets/img24.jpg',
+    title: 'Welcome Day',
+    description: ""
+  },
+  {
+    src: './assets/img22.jpg',
+    title: 'Sirius 101',
+    description: "Une série d'ateliers conçus pour donner aux étudiants une compréhension complète de l'Internet des objets (IoT)."
+  },
+  {
+    src: './assets/img23.jpg',
+    title: 'NASA Space Apps Challenge',
+    description: ""
+  },
+  {
+    src: './assets/img21.jpg',
+    title: 'Bejaia Hackathon',
+    description: "Un événement de codage collaboratif électrisant."
+  }
 ];
 
-function Sirius() {
-  const [items, setItems] = useState(images);
-  const [direction, setDirection] = useState(null);
-  const sliderRef = useRef(null);
 
-  const moveSlider = useCallback((newDirection) => {
-    setDirection(newDirection);
-    
-    setItems(prevItems => {
-      const newItems = [...prevItems];
-      if (newDirection === 'next') {
-        const firstItem = newItems.shift();
-        newItems.push(firstItem);
-      } else {
-        const lastItem = newItems.pop();
-        newItems.unshift(lastItem);
-      }
-      return newItems;
-    });
-  }, []);
-
-  useEffect(() => {
-    if (direction) {
-      const timer = setTimeout(() => {
-        setDirection(null);
-        if (sliderRef.current) {
-          sliderRef.current.classList.remove(direction);
-        }
-      }, 500);
-      return () => clearTimeout(timer);
-    }
-  }, [direction]);
-
-  useLayoutEffect(() => {
-    if (direction && sliderRef.current) {
-      sliderRef.current.classList.add(direction);
-    }
-  }, [direction, items]);
-
-  const sliderItems = useMemo(() => (
-    items.map((image, index) => (
-      <SliderItem
-        key={image.src}
-        image={image}
-        isActive={index === 0}
-      />
-    ))
-  ), [items]);
-
-  const thumbnailItems = useMemo(() => (
-    items.map((image) => (
-      <ThumbnailItem
-        key={image.src}
-        image={image}
-      />
-    ))
-  ), [items]);
-
+const Sirius = () => {
   return (
-    <div ref={sliderRef} className="slider">
-      <div className="list">
-        {sliderItems}
-      </div>
-      <div className="thumbnail">
-        {thumbnailItems}
-      </div>
-      <div className="nextPrevArrows">
-        <button className="prev" onClick={() => moveSlider('prev')}> &lt; </button>
-        <button className="next" onClick={() => moveSlider('next')}> &gt; </button>
-      </div>
+    <div className="carousel-wrapper">
+      <Carousel className="centered-carousel">
+        {images.map((image, index) => (
+          <Carousel.Item key={index}>
+            <img
+              className="d-block w-100"
+              src={process.env.PUBLIC_URL + image.src} // Utilisation de process.env.PUBLIC_URL pour le chemin correct
+              alt={image.title}
+            />
+            <Carousel.Caption>
+              <h3>{image.title}</h3>
+              <p>{image.description}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
     </div>
   );
 }
